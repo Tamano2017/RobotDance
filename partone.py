@@ -6,13 +6,35 @@ def CircleyCircle(x):
     wait(x)
     stop()
     penUp()
-def swayIntro(y):
-    while y > 0:
-        turnLeft(6,.5)
-        turnRight(6,.5)
-        y=y-1
+def swayRhythm(x):
+    while x > 0:
+        turnLeft(5,.42)
+        stop()
+        turnRight(5,.42)
+        stop()
+        x=x-1
+def sharpTurn(x):
+    while x > 0:
+        turnRight(9,.2)
+        x=x-1
+        wait(.35)
+def slide(x):
+    forward(2,x)
+    stop()
+def back(x):
+    backward(2,x)
+    stop()
 CircleyCircle(6)
 forward(1,1.1)
-swayIntro(6)
-turnRight(4,1)
+swayRhythm(6)
+turnRight(4,2.2)
+swayRhythm(6)
+sharpTurn(3)
+wait(.2)
+slide(1.1)
+back(1.1)
+slide(.42)
+back(.42)
+slide(.42)
+
 
