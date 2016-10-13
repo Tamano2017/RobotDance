@@ -1,11 +1,9 @@
 from Myro import *
 init("sim")
 def CircleyCircle(x):
-    penDown()
-    move(.5,1)
+    move(.5,-1)
     wait(x)
     stop()
-    penUp()
 def swayRhythm(x):
     for i in range(0,x):
         turnLeft(5,.42)
@@ -25,6 +23,14 @@ def back(x):
 def TaeVerseEnd(x):
     for i in range (0,x):
         slide(.42)
+        back(.42)
+def Chorus(x):
+    for i in range (0,x):
+        forward(8,.2)
+        forward(.5,.1)
+        stop()
+        backward(8,.2)
+        backward(.5,.1)
 CircleyCircle(6)
 forward(1,1.1)
 swayRhythm(6)
@@ -37,9 +43,16 @@ back(.8)
 TaeVerseEnd(2)
 CircleyCircle(4)
 back(2)
-slide(1)
+slide(1.4)
+sharpTurn(7)
+CircleyCircle(6)
+wait(1)
 sharpTurn(8)
-CircleyCircle(5)
+turnTo(45)
+forward(2,1)
+turnTo(180)
+
+
 
 
 
