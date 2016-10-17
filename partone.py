@@ -1,5 +1,8 @@
 from Myro import *
-init("sim")
+from Graphics import *
+sim=Simulation("My World", 700, 600, Color("lightBlue"))
+makeRobot("SimScribbler",sim)
+sim.setup()
 def CircleyCircle(x):
     move(.5,-1)
     wait(x)
@@ -24,14 +27,28 @@ def TaeVerseEnd(x):
     for i in range (0,x):
         slide(.42)
         back(.42)
-def Chorus(x):
+def ChorusLeft(x):
     for i in range (0,x):
         forward(8,.2)
         forward(.5,.1)
         stop()
+        wait(.1)
         backward(8,.2)
         backward(.5,.1)
+        wait(.2)
+def ChorusRight(x):
+    for i in range (0,x):
+        backward(8,.2)
+        backward(.5,.1)
+        stop()
+        wait(.1)
+        forward(8,.2)
+        forward(.5,.1)
+        stop()
+        wait(.2)
+penDown() #helps me tell when to start music
 CircleyCircle(6)
+penUp()
 forward(1,1.1)
 swayRhythm(6)
 turnRight(4,2.2)
@@ -41,16 +58,24 @@ wait(.1)
 slide(.8)
 back(.8)
 TaeVerseEnd(2)
-CircleyCircle(4)
+turnBy(-20)
+wait(3)
 back(2)
 slide(1.4)
 sharpTurn(7)
 CircleyCircle(6)
 wait(1)
-sharpTurn(8)
-turnTo(45)
-forward(2,1)
-turnTo(180)
+sharpTurn(9)
+wait(8.5)
+ChorusLeft(4)
+wait(.2)
+ChorusRight(2)
+sharpTurn(1)
+wait(1.2)
+ChorusLeft(4)
+wait(1)
+sharpTurn(3)
+
 
 
 
